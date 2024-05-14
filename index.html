@@ -19,10 +19,12 @@
             <div class="fs-3 col-3 d-flex flex-column">
                 <p>Cose da fare oggi:</p>
                 <div class="input-group mb-3">
-                    <input id="input-vue" v-model="toDo" type="text" class="form-control" placeholder="Oggi devo..."
+                    <input id="input-vue" v-model="newToDo" type="text" class="form-control" placeholder="Oggi devo..."
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <button @click="createLi(toDo, 'add', 'input-vue')" class="input-group-text"
+                    <!-- <button @click="createLi(toDo, 'add', 'input-vue')" class="input-group-text"
                         id="basic-addon2">Aggiungi
+                        Task</button> -->
+                    <button @click="addToDo(newToDo)" class="input-group-text" id="basic-addon2">Aggiungi
                         Task</button>
                 </div>
             </div>
@@ -33,7 +35,9 @@
                 <div class="bottone4"></div>
                 <p>LISTA:</p>
                 <div class="container-css">
-                    <ul id="add"></ul>
+                    <ul id="add">
+                        <li v-for="singleTask, i in toDo">{{toDo[i]}}</li>
+                    </ul>
                 </div>
             </div>
         </main>
