@@ -59,3 +59,9 @@ li {
 .container-css {
     margin: 0 50px;
 }
+
+i {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+}
